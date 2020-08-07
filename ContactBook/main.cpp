@@ -3,6 +3,8 @@
 #include <fstream> // ofstream, ifstream
 #include <string> // string
 #include <array>
+#include <set>
+#include <algorithm>
 #include "Person.hpp"
 using namespace std;
 
@@ -47,6 +49,49 @@ int binarySearch(int arr[], int arrLength, int index, int x){
 // </BINARY SEARCH>
 
 
+void addNames(){
+    string name;
+    cout << "Please enter a name: ";
+    cin >> name;
+    string arr[3] = {};
+    arr[0] = name;
+    
+    cout << "Thanks, you entered '" << name << "'.\n\nPlease enter another name: ";
+    cin >> name;
+    arr[1] = name;
+    
+    cout << "The second name you entered was '" << name << "'.\n\nEnter one last name: ";
+    cin >> name;
+    arr[2] = name;
+    cout << "The last name you entered was '" << name << "'." << endl;
+    
+    string nameArray;
+    for (int i=0; i < (sizeof(arr)/sizeof(arr[0])); i++){
+        nameArray += arr[i] + " ";
+    }
+    cout << "\nOur name array is: " << nameArray << endl;
+}
+
+void print(const string& item) {
+    cout << item << endl;
+}
+
+void sortNames(){
+    set<string> sortedItems;
+
+    for(int i = 1; i <= 5; ++i)
+    {
+        string name;
+        cout << i << ". ";
+        cin >> name;
+
+        sortedItems.insert(name);
+    }
+
+    for_each(sortedItems.begin(), sortedItems.end(), &print);
+}
+
+
 void bubbleSort(int arr[], int length){
     int i,j;
     
@@ -61,7 +106,6 @@ void bubbleSort(int arr[], int length){
     }
 }
 
-
 void printArray(int arr[], int length){
     int i;
     for (i=0; i < length; i++){
@@ -72,13 +116,37 @@ void printArray(int arr[], int length){
 
 
 int main() {
+//    string name;
+//    cout << "Please enter a name: ";
+//    cin >> name;
+//    string arr[3] = {};
+//    arr[0] = name;
+//
+//    cout << "Thanks, you entered '" << name << "'.\n\nPlease enter another name: ";
+//    cin >> name;
+//    arr[1] = name;
+//
+//    cout << "The second name you entered was '" << name << "'.\n\nEnter one last name: ";
+//    cin >> name;
+//    arr[2] = name;
+//
+//    string nameArray;
+//    for (int i=0; i < (sizeof(arr)/sizeof(arr[0])); i++){
+//        nameArray += arr[i] + " ";
+//    }
+//
+//    cout << "\n\nOur name array is: " << nameArray;
+
+sortNames();
+//addNames();
     
+//bubbleSortNames(nameArray);
     // <BUBBLE SORT>
-    cout << "not sorted: ";
-    printArray(unsorted, length);
-    bubbleSort(unsorted, length);
-    cout << "now sorted: ";
-    printArray(unsorted, length);
+//    cout << "not sorted: ";
+//    printArray(unsorted, length);
+//    bubbleSort(unsorted, length);
+//    cout << "now sorted: ";
+//    printArray(unsorted, length);
     // </BUBBLE SORT>
     
     // <BINARY SEARCH>
