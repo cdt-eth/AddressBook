@@ -139,15 +139,19 @@ int main() {
 
 sortNames();
 //addNames();
+
+    
     
 //bubbleSortNames(nameArray);
-    // <BUBBLE SORT>
+// <BUBBLE SORT>
 //    cout << "not sorted: ";
 //    printArray(unsorted, length);
 //    bubbleSort(unsorted, length);
 //    cout << "now sorted: ";
 //    printArray(unsorted, length);
-    // </BUBBLE SORT>
+// </BUBBLE SORT>
+    
+    
     
     // <BINARY SEARCH>
     //    int result = binarySearch(myContacts, 0, length-1, x);
